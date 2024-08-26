@@ -7,7 +7,7 @@
         "contact": {},
         "version": "v1"
     },
-    "host": "api.xftipprotocol.net",
+    "host": "api.xft-ip-protocol.net",
     "basePath": "/",
     "paths": {
         "/api/v1/assets": {
