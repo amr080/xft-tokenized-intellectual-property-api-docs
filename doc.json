@@ -3,11 +3,11 @@
     "swagger": "2.0",
     "info": {
         "description": "",
-        "title": "Story Protocol API Reference",
+        "title": "XFT Tokenized IP Protocol API Reference",
         "contact": {},
         "version": "v1"
     },
-    "host": "api.storyprotocol.net",
+    "host": "api.xftipprotocol.net",
     "basePath": "/",
     "paths": {
         "/api/v1/assets": {
