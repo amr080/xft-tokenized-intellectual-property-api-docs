@@ -1,0 +1,3933 @@
+{
+    "schemes": [],
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "title": "Story Protocol API Reference",
+        "contact": {},
+        "version": "v1"
+    },
+    "host": "api.storyprotocol.net",
+    "basePath": "/",
+    "paths": {
+        "/api/v1/assets": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of IPAssets",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPAssets"
+                ],
+                "summary": "List IPAssets",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IpAssetRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPAssetsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/assets/{assetId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve an IPAsset",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPAssets"
+                ],
+                "summary": "Get an IPAsset",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Asset ID",
+                        "name": "assetId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPAssetResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/collections": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Collections",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Collections"
+                ],
+                "summary": "List Collections",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.CollectionsRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.CollectionsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/collections/{collectionId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Collection",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Collections"
+                ],
+                "summary": "Get an Collection",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Collection ID",
+                        "name": "collectionId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.CollectionResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/disputes": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Disputes",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Disputes"
+                ],
+                "summary": "List Disputes",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.DisputeRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.DisputesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/disputes/{disputeId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Dispute",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Disputes"
+                ],
+                "summary": "Get a Dispute",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Dispute ID",
+                        "name": "disputeId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.DisputeResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/ipapolicies": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Policies",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPAPolicies"
+                ],
+                "summary": "List IPAPolicies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPAPolicyRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPAPoliciesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/ipapolicies/{ipaPolicyId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a IPAPolicy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPAPolicies"
+                ],
+                "summary": "Get a IPAPolicy",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "IPAPolicy ID",
+                        "name": "ipaPolicyId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPAPolicyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/keys/create": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Create a ApiKey",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create an ApiKey",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/auth.APIKeyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/keys/{apiKey}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a ApiKey",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ApiKeys"
+                ],
+                "summary": "Get an ApiKey",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "ApiKey ID",
+                        "name": "apiKey",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/auth.APIKeyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Licenses",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "List Licenses",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicensesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/ip/terms": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of IPLicenseTerms",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPLicenseTerms"
+                ],
+                "summary": "List IPLicenseTerms",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPLicenseTermsRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPLicenseTermsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/ip/terms/{ipLicenseTerm}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a IPLicenseTerm",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "IPLicenseTerms"
+                ],
+                "summary": "Get a IPLicenseTerm",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "IPLicenseTerm ID",
+                        "name": "ipLicenseTerm",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.IPLicenseTermResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/mintingfees": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of LicenseMintingFeePaids",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "List LicenseMintingFeePays",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseMintingFeePaidRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseMintingFeePaidsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/mintingfees/{licenseMintingFeePaidId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a LicenseMintingFeePay",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "Get a LicenseMintingFeePay",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "LicenseMintingFeePay ID",
+                        "name": "licenseMintingFeePaidId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseMintingFeePaidResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/owners": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of LicenseOwners",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "List LicenseOwners",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseOwnersRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseOwnersResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/owners/{licenseOwnerId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a LicenseOwner",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "Get a LicenseOwner",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "LicenseOwner ID",
+                        "name": "licenseOwnerId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseOwnerResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/templates": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of LicenseTemplates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTemplates"
+                ],
+                "summary": "List LicenseTemplates",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTemplatesRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTemplatesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/templates/{licenseTemplateId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a LicenseTemplate",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTemplates"
+                ],
+                "summary": "Get a LicenseTemplate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "LicenseTemplate ID",
+                        "name": "licenseTemplateId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTemplateResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/terms": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of LicenseTerms",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTerms"
+                ],
+                "summary": "List LicenseTerms",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTermsRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTermsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/terms/{licenseTermId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a LicenseTerm",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTerms"
+                ],
+                "summary": "Get a LicenseTerm",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "LicenseTerm ID",
+                        "name": "licenseTermId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTermResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/tokens": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of LicenseTokens",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTokens"
+                ],
+                "summary": "List LicenseTokens",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTokenRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTokensResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/tokens/{licenseTokenId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a LicenseToken",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "LicenseTokens"
+                ],
+                "summary": "Get an LicenseToken",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "License Token ID",
+                        "name": "licenseTokenId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseTokenResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenses/{licenseId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a License",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licenses"
+                ],
+                "summary": "Get an License",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "License ID",
+                        "name": "licenseId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.LicenseResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/modules": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Modules",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Modules"
+                ],
+                "summary": "List Modules",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.ModuleRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.ModulesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/modules/{moduleId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Module",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Modules"
+                ],
+                "summary": "Get a Module",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Module ID",
+                        "name": "moduleId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.ModuleResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/permissions": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Permissions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "List Permissions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PermissionRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PermissionsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/permissions/{permissionId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Permission",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "Get a Permission",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Permission ID",
+                        "name": "permissionId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PermissionResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/policies": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Policies",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "List Policies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PolicyRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PoliciesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/policies/frameworks": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of PolicyFrameworkManagers",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "List PolicyFrameworkManagers",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PolicyFrameworkManagerRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PolicyFrameworkManagersResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/policies/frameworks/{pfwmId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a PolicyFrameworkManager",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "Get a PolicyFrameworkManager",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "PolicyFrameworkManager ID",
+                        "name": "pfwmId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PolicyFrameworkManagerResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/policies/{policyId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Policy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "Get a Policy",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Policy ID",
+                        "name": "policyId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.PolicyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/royalties/payments": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of RoyaltyPays",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Royalties"
+                ],
+                "summary": "List RoyaltyPays",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPayRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPaysResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/royalties/payments/{royaltyPayId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a RoyaltyPay",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Royalties"
+                ],
+                "summary": "Get a RoyaltyPay",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "RoyaltyPay ID",
+                        "name": "royaltyPayId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPayResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/royalties/policies": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of RoyaltyPolicies",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Royalties"
+                ],
+                "summary": "List RoyaltyPolicies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPolicyRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPoliciesResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/royalties/policies/{royaltyPolicyId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a RoyaltyPolicy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Royalties"
+                ],
+                "summary": "Get a RoyaltyPolicy",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Royalty Policy ID",
+                        "name": "royaltyPolicyId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltyPolicyResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/royalties/splits/{royaltySplitId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Royalty Split",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Royalties"
+                ],
+                "summary": "Get a Royalty Split",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Royalty Split ID",
+                        "name": "royaltySplitId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.RoyaltySplitResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a paginated, filtered list of Transactions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transactions"
+                ],
+                "summary": "List Transactions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Query Parameters (",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/betav0.TransactionRequestBody"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.TransactionsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions/{trxId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Retrieve a Transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transactions"
+                ],
+                "summary": "Get a Transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Transaction ID",
+                        "name": "trxId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "API Key",
+                        "name": "X-API-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chain Destination",
+                        "name": "X-CHAIN",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/betav0.TransactionResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "auth.APIKey": {
+            "type": "object",
+            "properties": {
+                "api_key": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "entity": {
+                    "description": "Join Relationships",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/auth.Entity"
+                        }
+                    ]
+                },
+                "entity_id": {
+                    "description": "FK",
+                    "type": "integer"
+                },
+                "rateLimitRule": {
+                    "$ref": "#/definitions/auth.RateLimit"
+                },
+                "rate_limit_rule_id": {
+                    "type": "integer"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updated_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "auth.APIKeyResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/auth.APIKey"
+                }
+            }
+        },
+        "auth.Entity": {
+            "type": "object",
+            "properties": {
+                "apikeys": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/auth.APIKey"
+                    }
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "externalEntities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/auth.ExternalEntity"
+                    }
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "twitter": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "auth.ExternalEntity": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "entity": {
+                    "description": "Join Relationships",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/auth.Entity"
+                        }
+                    ]
+                },
+                "entity_id": {
+                    "description": "FK",
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "network": {
+                    "type": "string"
+                },
+                "twitter": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                }
+            }
+        },
+        "auth.RateLimit": {
+            "type": "object",
+            "properties": {
+                "burst_capacity": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "requests_per_unit": {
+                    "type": "integer"
+                },
+                "unit": {
+                    "description": "\"1s\", \"3m\", \"4h\", etc.",
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.Collection": {
+            "type": "object",
+            "properties": {
+                "assetCount": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "cancelledDisputeCount": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "judgedDisputeCount": {
+                    "type": "string"
+                },
+                "licensesCount": {
+                    "type": "string"
+                },
+                "raisedDisputeCount": {
+                    "type": "string"
+                },
+                "resolvedDisputeCount": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.CollectionQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object"
+                }
+            }
+        },
+        "betav0.CollectionResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Collection"
+                }
+            }
+        },
+        "betav0.CollectionsRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.CollectionQueryOptions"
+                }
+            }
+        },
+        "betav0.CollectionsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Collection"
+                    }
+                }
+            }
+        },
+        "betav0.Dispute": {
+            "type": "object",
+            "properties": {
+                "arbitrationPolicy": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "currentTag": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "string"
+                },
+                "evidenceLink": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "initiator": {
+                    "type": "string"
+                },
+                "targetIpId": {
+                    "type": "string"
+                },
+                "targetTag": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.DisputeQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "currentTag": {
+                            "type": "string"
+                        },
+                        "initiator": {
+                            "type": "string"
+                        },
+                        "targetIpId": {
+                            "type": "string"
+                        },
+                        "targetTag": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.DisputeRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.DisputeQueryOptions"
+                }
+            }
+        },
+        "betav0.DisputeResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Dispute"
+                }
+            }
+        },
+        "betav0.DisputesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Dispute"
+                    }
+                }
+            }
+        },
+        "betav0.Holder": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "ownership": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.IPAPQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "active": {
+                            "type": "string"
+                        },
+                        "inherited": {
+                            "type": "string"
+                        },
+                        "ipId": {
+                            "type": "string"
+                        },
+                        "policyId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.IPAPoliciesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPAPolicy"
+                    }
+                }
+            }
+        },
+        "betav0.IPAPolicy": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "index": {
+                    "type": "string"
+                },
+                "inherited": {
+                    "type": "boolean"
+                },
+                "ipId": {
+                    "type": "string"
+                },
+                "policyId": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.IPAPolicyRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.IPAPQueryOptions"
+                }
+            }
+        },
+        "betav0.IPAPolicyResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.IPAPolicy"
+                }
+            }
+        },
+        "betav0.IPAsset": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "childIpIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "childIps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPAsset"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "nftMetadata": {
+                    "$ref": "#/definitions/betav0.NftMetadata"
+                },
+                "parentIpIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "parentIps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPAsset"
+                    }
+                },
+                "rootIpIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "rootIps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPAsset"
+                    }
+                }
+            }
+        },
+        "betav0.IPAssetResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.IPAsset"
+                }
+            }
+        },
+        "betav0.IPAssetsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPAsset"
+                    }
+                }
+            }
+        },
+        "betav0.IPLicenseTerm": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTime": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipId": {
+                    "type": "string"
+                },
+                "licenseTemplate": {
+                    "type": "string"
+                },
+                "licenseTermsId": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.IPLicenseTermResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.IPLicenseTerm"
+                }
+            }
+        },
+        "betav0.IPLicenseTermsQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "ipId": {
+                            "type": "string"
+                        },
+                        "licenseTemplate": {
+                            "type": "string"
+                        },
+                        "licenseTermsID": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.IPLicenseTermsRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.IPLicenseTermsQueryOptions"
+                }
+            }
+        },
+        "betav0.IPLicenseTermsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.IPLicenseTerm"
+                    }
+                }
+            }
+        },
+        "betav0.IpAssetQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "chainId": {
+                            "type": "string"
+                        },
+                        "metadataResolverAddress": {
+                            "type": "string"
+                        },
+                        "tokenContract": {
+                            "type": "string"
+                        },
+                        "tokenId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.IpAssetRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.IpAssetQueryOptions"
+                }
+            }
+        },
+        "betav0.License": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTime": {
+                    "type": "string"
+                },
+                "burntAt": {
+                    "type": "string"
+                },
+                "expiresAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "licenseTemplate": {
+                    "type": "string"
+                },
+                "licenseTermsId": {
+                    "type": "string"
+                },
+                "licensorIpId": {
+                    "type": "string"
+                },
+                "mintedAt": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "transferable": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "betav0.LicenseMintingFeePaid": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "payer": {
+                    "type": "string"
+                },
+                "receiverIpId": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.LicenseMintingFeePaidQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "payer": {
+                            "type": "string"
+                        },
+                        "receiverIpId": {
+                            "type": "string"
+                        },
+                        "token": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseMintingFeePaidRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseMintingFeePaidQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseMintingFeePaidResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.LicenseMintingFeePaid"
+                }
+            }
+        },
+        "betav0.LicenseMintingFeePaidsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.LicenseMintingFeePaid"
+                    }
+                }
+            }
+        },
+        "betav0.LicenseOwner": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "policyId": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.LicenseOwnerQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "owner": {
+                            "type": "string"
+                        },
+                        "policyId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseOwnerResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.LicenseOwner"
+                }
+            }
+        },
+        "betav0.LicenseOwnersRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseOwnerQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseOwnersResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.LicenseOwner"
+                    }
+                }
+            }
+        },
+        "betav0.LicenseQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "licensorIpId": {
+                            "type": "string"
+                        },
+                        "policyId": {
+                            "type": "string"
+                        },
+                        "transferable": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.License"
+                }
+            }
+        },
+        "betav0.LicenseTemplate": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTime": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "metadataUri": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.LicenseTemplateResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.LicenseTemplate"
+                }
+            }
+        },
+        "betav0.LicenseTemplatesQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseTemplatesRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseTemplatesQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseTemplatesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.LicenseTemplate"
+                    }
+                }
+            }
+        },
+        "betav0.LicenseTerm": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTime": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "licenseTemplate": {
+                    "type": "string"
+                },
+                "licenseTerms": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": {}
+                    }
+                },
+                "licenseTermsRaw": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.LicenseTermResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.LicenseTerm"
+                }
+            }
+        },
+        "betav0.LicenseTermsQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "licenseTemplate": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseTermsRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseTermsQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseTermsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.LicenseTerm"
+                    }
+                }
+            }
+        },
+        "betav0.LicenseToken": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTime": {
+                    "type": "string"
+                },
+                "burntAt": {
+                    "type": "string"
+                },
+                "expiresAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "licenseTemplate": {
+                    "type": "string"
+                },
+                "licenseTermsId": {
+                    "type": "string"
+                },
+                "licensorIpId": {
+                    "type": "string"
+                },
+                "mintedAt": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "transferable": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.LicenseTokenQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "licenseTermsId": {
+                            "type": "string"
+                        },
+                        "licensorIpId": {
+                            "type": "string"
+                        },
+                        "transferable": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.LicenseTokenRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.LicenseTokenQueryOptions"
+                }
+            }
+        },
+        "betav0.LicenseTokenResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.LicenseToken"
+                }
+            }
+        },
+        "betav0.LicenseTokensResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.LicenseToken"
+                    }
+                }
+            }
+        },
+        "betav0.LicensesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.License"
+                    }
+                }
+            }
+        },
+        "betav0.Module": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "module": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.ModuleQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.ModuleRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.ModuleQueryOptions"
+                }
+            }
+        },
+        "betav0.ModuleResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Module"
+                }
+            }
+        },
+        "betav0.ModulesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Module"
+                    }
+                }
+            }
+        },
+        "betav0.NftMetadata": {
+            "type": "object",
+            "properties": {
+                "chainId": {
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "tokenContract": {
+                    "type": "string"
+                },
+                "tokenId": {
+                    "type": "string"
+                },
+                "tokenUri": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.PFWMQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.PILPolicy": {
+            "type": "object",
+            "properties": {
+                "attribution": {
+                    "type": "boolean"
+                },
+                "commercialAttribution": {
+                    "type": "boolean"
+                },
+                "commercialRevShare": {
+                    "type": "string"
+                },
+                "commercialUse": {
+                    "type": "boolean"
+                },
+                "commercializerChecker": {
+                    "type": "string"
+                },
+                "commercializerCheckerData": {
+                    "type": "string"
+                },
+                "contentRestrictions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "derivativesAllowed": {
+                    "type": "boolean"
+                },
+                "derivativesApproval": {
+                    "type": "boolean"
+                },
+                "derivativesAttribution": {
+                    "type": "boolean"
+                },
+                "derivativesReciprocal": {
+                    "type": "boolean"
+                },
+                "distributionChannels": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "territories": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "betav0.Permission": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "func": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "permission": {
+                    "type": "string"
+                },
+                "signer": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.PermissionQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "signer": {
+                            "type": "string"
+                        },
+                        "to": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.PermissionRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.PermissionQueryOptions"
+                }
+            }
+        },
+        "betav0.PermissionResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Permission"
+                }
+            }
+        },
+        "betav0.PermissionsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Permission"
+                    }
+                }
+            }
+        },
+        "betav0.PoliciesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Policy"
+                    }
+                }
+            }
+        },
+        "betav0.Policy": {
+            "type": "object",
+            "properties": {
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "frameworkData": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "mintingFee": {
+                    "type": "string"
+                },
+                "mintingFeeToken": {
+                    "type": "string"
+                },
+                "pil": {
+                    "$ref": "#/definitions/betav0.PILPolicy"
+                },
+                "policyFrameworkManager": {
+                    "type": "string"
+                },
+                "royaltyData": {
+                    "type": "string"
+                },
+                "royaltyPolicy": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.PolicyFrameworkManager": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "licenseUrl": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.PolicyFrameworkManagerRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.PFWMQueryOptions"
+                }
+            }
+        },
+        "betav0.PolicyFrameworkManagerResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.PolicyFrameworkManager"
+                }
+            }
+        },
+        "betav0.PolicyFrameworkManagersResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.PolicyFrameworkManager"
+                    }
+                }
+            }
+        },
+        "betav0.PolicyQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "mintingFeeToken": {
+                            "type": "string"
+                        },
+                        "policyFrameworkManager": {
+                            "type": "string"
+                        },
+                        "royaltyPolicy": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.PolicyRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.PolicyQueryOptions"
+                }
+            }
+        },
+        "betav0.PolicyResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Policy"
+                }
+            }
+        },
+        "betav0.RoyaltyPay": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "payerIpId": {
+                    "type": "string"
+                },
+                "receiverIpId": {
+                    "type": "string"
+                },
+                "sender": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.RoyaltyPayQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "payerIpId": {
+                            "type": "string"
+                        },
+                        "receiverIpId": {
+                            "type": "string"
+                        },
+                        "sender": {
+                            "type": "string"
+                        },
+                        "token": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.RoyaltyPayRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.RoyaltyPayQueryOptions"
+                }
+            }
+        },
+        "betav0.RoyaltyPayResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.RoyaltyPay"
+                }
+            }
+        },
+        "betav0.RoyaltyPaysResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.RoyaltyPay"
+                    }
+                }
+            }
+        },
+        "betav0.RoyaltyPoliciesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.RoyaltyPolicy"
+                    }
+                }
+            }
+        },
+        "betav0.RoyaltyPolicy": {
+            "type": "object",
+            "properties": {
+                "ancestorsVault": {
+                    "type": "string"
+                },
+                "blockNumber": {
+                    "type": "string"
+                },
+                "blockTimestamp": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipRoyaltyVault": {
+                    "type": "string"
+                },
+                "royaltyStack": {
+                    "type": "string"
+                },
+                "splitClone": {
+                    "type": "string"
+                },
+                "targetAncestors": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "targetRoyaltyAmount": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "betav0.RoyaltyPolicyQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "ipId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "betav0.RoyaltyPolicyRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.RoyaltyPolicyQueryOptions"
+                }
+            }
+        },
+        "betav0.RoyaltyPolicyResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.RoyaltyPolicy"
+                }
+            }
+        },
+        "betav0.RoyaltySplit": {
+            "type": "object",
+            "properties": {
+                "claimFromIPPoolArg": {
+                    "type": "string"
+                },
+                "holders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Holder"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.RoyaltySplitResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.RoyaltySplit"
+                }
+            }
+        },
+        "betav0.Transaction": {
+            "type": "object",
+            "properties": {
+                "actionType": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "initiator": {
+                    "type": "string"
+                },
+                "ipId": {
+                    "type": "string"
+                },
+                "resourceId": {
+                    "type": "string"
+                },
+                "resourceType": {
+                    "type": "string"
+                }
+            }
+        },
+        "betav0.TransactionRequestBody": {
+            "type": "object",
+            "properties": {
+                "options": {
+                    "$ref": "#/definitions/betav0.TrxQueryOptions"
+                }
+            }
+        },
+        "betav0.TransactionResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/betav0.Transaction"
+                }
+            }
+        },
+        "betav0.TransactionsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/betav0.Transaction"
+                    }
+                }
+            }
+        },
+        "betav0.TrxQueryOptions": {
+            "type": "object",
+            "properties": {
+                "orderBy": {
+                    "type": "string"
+                },
+                "orderDirection": {
+                    "type": "string"
+                },
+                "pagination": {
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "where": {
+                    "type": "object",
+                    "properties": {
+                        "actionType": {
+                            "type": "string"
+                        },
+                        "ipId": {
+                            "type": "string"
+                        },
+                        "resourceId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
